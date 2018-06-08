@@ -1,4 +1,4 @@
-package com.mrathena.study.queue;
+package com.mrathena.study.concurrent.queue;
 
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
