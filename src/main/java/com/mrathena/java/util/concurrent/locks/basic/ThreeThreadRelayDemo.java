@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.mrathena.toolkit.ThreadKit;
 
 public class ThreeThreadRelayDemo {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		ThreeThreadRelayService service = new ThreeThreadRelayService();
 
 		ThreeThreadRelayThread thread = new ThreeThreadRelayThread("T1", 1, service);
@@ -20,6 +20,7 @@ public class ThreeThreadRelayDemo {
 
 		service.signal(1);
 
+		thread3.join();
 	}
 }
 
@@ -44,9 +45,6 @@ class ThreeThreadRelayService {
 					condition3.await();
 					break;
 				default:
-					condition.await();
-					condition2.await();
-					condition3.await();
 					break;
 			}
 		} catch (InterruptedException e) {
@@ -70,9 +68,6 @@ class ThreeThreadRelayService {
 					condition3.signal();
 					break;
 				default:
-					condition.signal();
-					condition2.signal();
-					condition3.signal();
 					break;
 			}
 		} catch (Exception e) {
@@ -97,10 +92,12 @@ class ThreeThreadRelayThread extends Thread {
 
 	@Override
 	public void run() {
+		System.out.println(ThreadKit.getName() + "准备");
 		service.await(index);
 		System.out.println(ThreadKit.getName() + "起跑");
 		ThreadKit.sleep(1000);
 		System.out.println(ThreadKit.getName() + "跑完了");
+		service.signal(index + 1);
 	}
 
 }
