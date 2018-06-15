@@ -6,6 +6,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import com.mrathena.toolkit.DateTimeKit;
 
+import lombok.AllArgsConstructor;
+
 // public Condition newCondition()
 // 返回用来与此 Lock 实例一起使用的 Condition 实例。
 // 在使用内置监视器锁时，返回的 Condition 实例支持与 Object 的监视器方法（wait、notify 和 notifyAll）相同的用法。
@@ -55,14 +57,10 @@ class SingleConditionService {
 
 }
 
+@AllArgsConstructor
 class SingleConditionThread extends Thread {
 
 	private SingleConditionService service;
-
-	public SingleConditionThread(SingleConditionService service) {
-		super();
-		this.service = service;
-	}
 
 	@Override
 	public void run() {
