@@ -1,4 +1,4 @@
-package com.mrathena.java.util.concurrent.locks.basic;
+package com.mrathena.java.util.concurrent.locks.basic.lockAndCondition;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
