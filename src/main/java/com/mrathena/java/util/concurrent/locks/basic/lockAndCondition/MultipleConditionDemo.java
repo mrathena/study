@@ -22,15 +22,18 @@ public class MultipleConditionDemo {
 		thread3.start();
 		thread4.start();
 
-		ThreadKit.sleep(1000);
 		// 唤醒condition上的一个线程
+//		ThreadKit.sleep(1000);
 //		service.signal();
-		ThreadKit.sleep(1000);
+
 		// 唤醒condition2上的一个线程
+//		ThreadKit.sleep(1000);
 //		service.signal2();
+
 		// 唤醒condition上的所有线程
-		ThreadKit.sleep(1000);
-		service.signalAll();
+//		ThreadKit.sleep(1000);
+//		service.signalAll();
+
 		// 唤醒condition2上的所有线程
 		ThreadKit.sleep(1000);
 		service.signalAll2();

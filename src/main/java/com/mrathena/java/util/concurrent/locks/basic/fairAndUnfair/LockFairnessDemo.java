@@ -10,6 +10,8 @@ import com.mrathena.toolkit.ThreadKit;
  */
 public class LockFairnessDemo {
 
+	// 这个例子并不太好,看不出明显的效果
+
 	public static void main(String[] args) {
 		LockFairnessService service = new LockFairnessService(true);
 //		LockFairnessService service = new LockFairnessService(false);
@@ -21,11 +23,11 @@ public class LockFairnessDemo {
 			}
 		};
 
-		Thread[] threadArray = new Thread[10];
-		for (int i = 0; i < 10; i++) {
+		Thread[] threadArray = new Thread[100];
+		for (int i = 0; i < 100; i++) {
 			threadArray[i] = new Thread(runnable);
 		}
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 100; i++) {
 			threadArray[i].start();
 		}
 
