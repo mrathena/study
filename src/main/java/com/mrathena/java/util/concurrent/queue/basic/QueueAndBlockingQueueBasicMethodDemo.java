@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.mrathena.toolkit.ThreadKit;
 
-public class QueueAndBlockingQueueBasicMethodTest {
+public class QueueAndBlockingQueueBasicMethodDemo {
 
 	public static void main(String[] args) {
 
