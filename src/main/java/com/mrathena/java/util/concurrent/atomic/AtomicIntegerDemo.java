@@ -8,6 +8,9 @@ import java.util.stream.IntStream;
 
 public class AtomicIntegerDemo {
 
+	/*
+	 * 内部:int, 只有数值类型才有加减操作, compareAndXxxx 这类方法都是当前值与预期值比较,相同的时候才操作
+	 */
 	public static void main(String[] args) {
 		AtomicInteger atomicInteger = new AtomicInteger();
 		System.out.println(atomicInteger.get());

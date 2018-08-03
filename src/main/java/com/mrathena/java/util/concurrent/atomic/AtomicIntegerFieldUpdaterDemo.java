@@ -3,6 +3,11 @@ package com.mrathena.java.util.concurrent.atomic;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 public class AtomicIntegerFieldUpdaterDemo {
+
+	/*
+	 * 修改某个类的对象的int类型的字段, 必须是volatile修饰的int字段, Integer字段要用Reference的那个
+	 */
+
 	/*
 	相应的API也是非常简单的，但是也是有一些约束的。
 	（1）字段必须是volatile类型的！在后面的章节中会详细说明为什么必须是volatile，volatile到底是个什么东西。

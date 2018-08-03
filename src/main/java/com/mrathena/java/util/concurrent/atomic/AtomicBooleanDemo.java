@@ -4,6 +4,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class AtomicBooleanDemo {
 
+	/*
+	 * 内部:int, 值=1代表true, 否则代表false
+	 */
 	public static void main(String[] args) {
 		AtomicBoolean atomicBoolean = new AtomicBoolean();
 		System.out.println(atomicBoolean.get());

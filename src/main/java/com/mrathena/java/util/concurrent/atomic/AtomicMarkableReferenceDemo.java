@@ -15,6 +15,9 @@ public class AtomicMarkableReferenceDemo {
 	/*为了解决ABA问题，伟大的java为我们提供了AtomicMarkableReference和AtomicStampedReference类
 	AtomicMarkableReference是利用boolean标记的形式记录了是否做了标记这个状态，这样的话就不会存在ABA问题了*/
 
+	/*
+	 * 内部:内部类Pair<V>, 其内部:T,boolean(标记), 当前值/预期值,当前标记预期标记都一致才会更新
+	 */
 	public static void main(String[] args) {
 		AtomicMarkableReference<Integer> atomicMarkableReference = new AtomicMarkableReference<>(0, true);
 		log.info("{}, {}", atomicMarkableReference.getReference(), atomicMarkableReference.isMarked());
