@@ -3,12 +3,12 @@ package com.mrathena.access.modifier.b;
 import com.mrathena.access.modifier.a.Animal;
 
 /**
- * 不同包.子类
+ * 不同包.非子类
  */
-public class Cat extends Animal {
+public class Orange {
 
 	/**
-	 * [public]修饰的属性和方法[可以]在[不同包.子类]中访问
+	 * [public]修饰的属性和方法[可以]在[不同包.非子类]中访问
 	 */
 	public static void public_test() {
 		Animal animal = new Animal();
@@ -17,7 +17,7 @@ public class Cat extends Animal {
 	}
 
 	/**
-	 * [protected]修饰的属性和方法不[不可以]在[不同包.子类]中访问
+	 * [protected]修饰的属性和方法不[不可以]在[不同包.非子类]中访问
 	 */
 	public static void protected_test() {
 		Animal animal = new Animal();
@@ -26,7 +26,7 @@ public class Cat extends Animal {
 	}
 
 	/**
-	 * [default]修饰的属性和方法[不可以]在[不同包.子类]中访问
+	 * [default]修饰的属性和方法[不可以]在[不同包.非子类]中访问
 	 */
 	public static void default_test() {
 		Animal animal = new Animal();
@@ -35,27 +35,12 @@ public class Cat extends Animal {
 	}
 
 	/**
-	 * [private]修饰的属性和方法[不可以]在[不同包.子类]中访问
+	 * [private]修饰的属性和方法[不可以]在[不同包.非子类]中访问
 	 */
 	public static void private_test() {
 		Animal animal = new Animal();
 //		System.out.println(animal.privateFiled);
 //		animal.privateMethod();
-	}
-
-	/**
-	 * 子类专属
-	 * super.xxx
-	 */
-	public void test() {
-		System.out.println(super.publicFiled);
-		System.out.println(super.protectedFiled);
-//		System.out.println(super.defaultFiled);
-//		System.out.println(super.privateFiled);
-		super.publicMethod();
-		super.protectedMethod();
-//		super.defaultMethod();
-//		super.privateMethod();
 	}
 
 }
